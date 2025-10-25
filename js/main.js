@@ -5,7 +5,6 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Initialize all functionality
     initSmoothScroll();
-    initFormValidation();
     initAnimations();
     initAccessibility();
     
@@ -30,77 +29,6 @@ function initSmoothScroll() {
     });
 }
 
-// Form Validation for Contact Page
-function initFormValidation() {
-    const contactForm = document.getElementById('contactForm');
-    
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(event) {
-            event.preventDefault();
-            event.stopPropagation();
-            
-            if (contactForm.checkValidity()) {
-                handleFormSubmit(contactForm);
-            }
-            
-            contactForm.classList.add('was-validated');
-        }, false);
-    }
-}
-
-// Handle Form Submission
-function handleFormSubmit(form) {
-    // Get form data
-    const formData = {
-        name: form.querySelector('#name').value,
-        email: form.querySelector('#email').value,
-        studentId: form.querySelector('#studentId')?.value || 'Not provided',
-        subject: form.querySelector('#subject').value,
-        message: form.querySelector('#message').value,
-        timestamp: new Date().toISOString()
-    };
-    
-    // Show loading state
-    const submitBtn = form.querySelector('button[type="submit"]');
-    const originalText = submitBtn.innerHTML;
-    submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm me-2"></span>Sending...';
-    submitBtn.disabled = true;
-    
-    // Simulate form submission (replace with actual API call)
-    setTimeout(() => {
-        // Log form data (in production, send to server)
-        console.log('Form submitted:', formData);
-        
-        // Show success message
-        showNotification('success', 'Thank you! We\'ve received your message and will respond within 2 working days.');
-        
-        // Reset form
-        form.reset();
-        form.classList.remove('was-validated');
-        
-        // Restore button
-        submitBtn.innerHTML = originalText;
-        submitBtn.disabled = false;
-    }, 1500);
-}
-
-// Show Notification
-function showNotification(type, message) {
-    const alertDiv = document.createElement('div');
-    alertDiv.className = `alert alert-${type === 'success' ? 'success' : 'danger'} alert-dismissible fade show position-fixed top-0 start-50 translate-middle-x mt-3`;
-    alertDiv.style.zIndex = '9999';
-    alertDiv.innerHTML = `
-        ${message}
-        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-    `;
-    
-    document.body.appendChild(alertDiv);
-    
-    // Auto-remove after 5 seconds
-    setTimeout(() => {
-        alertDiv.remove();
-    }, 5000);
-}
 
 // Scroll Animations
 function initAnimations() {
