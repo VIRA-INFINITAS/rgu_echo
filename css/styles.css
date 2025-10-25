@@ -192,8 +192,7 @@ a:hover {
 
 .nav-link:hover,
 .nav-link.active {
-    color: var(--primary-color) !important;
-    background-color: var(--gray-50);
+    background-color: transparent;
 }
 
 /* ============================================
