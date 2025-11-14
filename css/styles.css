@@ -328,8 +328,10 @@ a:hover {
   );
 }
 
+.container > .row > .col-6 a .card:hover h4,
 .container > .row > .col-6 a .card:hover h5,
 .container > .row > .col-6 a .card:hover h6,
+.container > .row > .col-md-3 a .card:hover h4,
 .container > .row > .col-md-3 a .card:hover h5,
 .container > .row > .col-md-3 a .card:hover h6 {
   color: var(--white) !important;
@@ -596,7 +598,7 @@ footer a {
 }
 
 footer a:hover {
-  color: var(--primary-light);
+  color: var(--white);
 }
 
 footer ul {
@@ -941,10 +943,6 @@ label {
 /* Footer */
 footer a {
   transition: color var(--transition-speed) ease;
-}
-
-footer a:hover {
-  color: #667eea !important;
 }
 
 /* Responsive Images */
