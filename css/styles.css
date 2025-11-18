@@ -323,6 +323,11 @@ a:hover {
   box-shadow: var(--shadow-lg);
 }
 
+/* Disable hover animation for GP Form card */
+.gp-form-card:hover {
+  transform: none;
+}
+
 /* Topic cards hover effect - ONLY for need-a-bit-more page */
 .container > .row > .col-6 a .card:hover,
 .container > .row > .col-md-3 a .card:hover {
