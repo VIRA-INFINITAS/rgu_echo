@@ -342,6 +342,13 @@ a:hover {
   color: var(--white) !important;
 }
 
+.container > .row > .col-6 a .card:hover i,
+.container > .row > .col-md-3 a .card:hover i,
+.container > .row > .col-6 a .card:hover .material-symbols-outlined,
+.container > .row > .col-md-3 a .card:hover .material-symbols-outlined {
+  color: var(--white) !important;
+}
+
 .card-icon {
   width: 60px;
   height: 60px;
@@ -913,6 +920,22 @@ html {
   outline: none !important;
   box-shadow: none !important;
   border: 2px solid white !important;
+}
+
+/* Give Feedback CTA Button */
+.btn-feedback-cta {
+  transition: all 0.3s ease;
+}
+
+.btn-feedback-cta:hover {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+  color: white !important;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4) !important;
+}
+
+.btn-feedback-cta:hover i {
+  color: white !important;
 }
 
 .hero-section::before {
