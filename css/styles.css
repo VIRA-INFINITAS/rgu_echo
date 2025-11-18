@@ -232,7 +232,7 @@ a:hover {
   font-size: 0.9rem;
   letter-spacing: 0.01em;
   padding: 0.5rem 0.75rem !important;
-  border-radius: var(--radius-md);
+  border-radius: 0;
   transition: all var(--transition-fast);
   position: relative;
 }
@@ -240,6 +240,11 @@ a:hover {
 .nav-link:hover,
 .nav-link.active {
   background-color: transparent;
+}
+
+.nav-link:focus {
+  box-shadow: none !important;
+  outline: none !important;
 }
 
 .logo {
@@ -798,10 +803,116 @@ html {
   width: 80%;
 }
 
+/* Dropdown styles */
+.dropdown-toggle::after {
+  display: none !important;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown-menu {
+  margin-top: 0 !important;
+  border: none !important;
+  background-color: rgba(255, 255, 255, 0.9) !important;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 0 0 8px 8px;
+  padding: 0.5rem;
+}
+
+.dropdown-item {
+  font-family: var(--font-primary);
+  color: var(--gray-700) !important;
+  font-weight: 400;
+  font-size: 0.9rem;
+  letter-spacing: 0.01em;
+  padding: 0.5rem 0.75rem !important;
+  border-radius: 0;
+  transition: all var(--transition-speed) ease;
+  position: relative;
+  background-color: transparent !important;
+  opacity: 1 !important;
+}
+
+.dropdown-item:hover {
+  background-color: transparent !important;
+  color: var(--gray-900) !important;
+}
+
+.dropdown-item:focus,
+.dropdown-item:active {
+  background-color: transparent !important;
+  color: var(--gray-900) !important;
+  outline: none !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+.dropdown-item:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: #0d6efd;
+  transition: all var(--transition-speed) ease;
+  transform: translateX(-50%);
+}
+
+.dropdown-item:hover:after {
+  width: 80%;
+}
+
+.nav-item.dropdown .nav-link:after {
+  display: none;
+}
+
 /* Hero Section */
 .hero-section {
   position: relative;
   overflow: hidden;
+}
+
+/* Hero Button Hover Animations */
+.hero-btn-quick-fixes {
+  transition: all 0.3s ease;
+  border: none !important;
+}
+
+.hero-btn-quick-fixes:hover {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+  color: white !important;
+  border: none !important;
+  transform: translateY(-5px) !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2) !important;
+}
+
+.hero-btn-quick-fixes:focus,
+.hero-btn-quick-fixes:active {
+  outline: none !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+.hero-btn-explore {
+  transition: all 0.3s ease;
+}
+
+.hero-btn-explore:hover {
+  background: rgba(255, 255, 255, 0.35) !important;
+  transform: translateY(-5px) !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2) !important;
+}
+
+.hero-btn-explore:focus,
+.hero-btn-explore:active {
+  outline: none !important;
+  box-shadow: none !important;
+  border: 2px solid white !important;
 }
 
 .hero-section::before {
