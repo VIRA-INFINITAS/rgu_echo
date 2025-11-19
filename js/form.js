@@ -4,13 +4,14 @@ const { jsPDF } = window.jspdf;
 let siteLogo = null;
 
 // load your logo for the pdf
-fetch("https://max1382.com/images/logos/max1382-logo.webp")
+fetch("img/echo-logo.png")
   .then(r => r.blob())
   .then(b => {
     const reader = new FileReader();
     reader.onload = () => siteLogo = reader.result;
     reader.readAsDataURL(b);
   });
+
 
 const questions = [
   "I've been feeling optimistic about the future",
