@@ -115,7 +115,12 @@
 
 
 
- 
+<script>
+    function autofillTesting() {
+  for (let i = 0; i <questions.length; i++) { const value = Math.floor(Math.random() * 5) + 1; const radio = document.querySelector(`input[name='q${i}'][value='${value}']`); if (radio) radio.checked = true; } } </script>
+
+<button type="button" onclick="autofillTesting()" class="btn btn-warning my-3">Auto Fill (Testing)</button>
+
     <!-- Footer -->
     <footer>
       <div class="container">
